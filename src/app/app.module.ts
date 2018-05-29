@@ -8,6 +8,7 @@ import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButt
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import {PanelMenuModule} from 'primeng/panelmenu';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    PanelMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

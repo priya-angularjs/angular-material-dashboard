@@ -1,26 +1,39 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport="true"
-    [attr.role]="(isHandset$ | async )? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)">
-    <mat-toolbar color="primary">Menu
-    </mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
+<!--
+<div>
+  <mat-toolbar class="bg-img">
+    <button mat-icon-button color="secondary" (click)="drawer.toggle()">
+      <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
+    </button>
+  </mat-toolbar>
+<mat-sidenav-container>
+
+
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button mat-icon-button color="secondary" (click)="drawer.toggle()">
-        <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
-      </button>
-      <span>Material Dashboard</span>
-    </mat-toolbar>
    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+</div>-->
+<div class="example-container" [class.example-is-mobile]="(isHandset$ | async)">
+  <mat-toolbar class="bg-img">
+   <span class="fontSize"> Material Dashboard</span>
+    <button mat-icon-button color="secondary" (click)="drawer.toggle()">
+      <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="(isHandset$ | async) ? 56 : 0">
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      [attr.role]="(isHandset$ | async )? 'navigation' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+      <!--<mat-toolbar class="bg-img"><span>Material Dashboard</span>-->
+      <!--</mat-toolbar>-->
+      <p-panelMenu [model]="items" [multiple]="false"></p-panelMenu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
