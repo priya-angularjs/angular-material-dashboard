@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {PanelMenuModule} from 'primeng/panelmenu';
+import {ChartsModule} from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {PanelMenuModule} from 'primeng/panelmenu';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    PanelMenuModule
+    PanelMenuModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
